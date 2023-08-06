@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MDPL_Passport.Services
 {
-    public class AuthService
+    public class AuthService : IAuthService
     {
         private readonly List<User> users = new List<User>
         {
@@ -37,7 +37,7 @@ namespace MDPL_Passport.Services
         {
             var user = users.FirstOrDefault(u => u.Login == username && u.Password == password);
 
-            if(user == null)
+            if (user == null)
             {
                 return Task.FromResult(false);
             }

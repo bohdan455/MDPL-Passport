@@ -23,6 +23,14 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
         <ShellContent
+        Title="QrCode"
+        ContentTemplate="{DataTemplate pages:QrCodePage}"
+        Route="QrCodePage" />
+        <ShellContent
+        Title="QrScanner"
+        ContentTemplate="{DataTemplate pages:QrScannerPage}"
+        Route="QrScannerPage" />
+        <ShellContent
         Title="Vibration"
         ContentTemplate="{DataTemplate pages:VibrationPage}"
         Route="VibrationPage" />

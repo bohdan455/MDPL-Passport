@@ -21,8 +21,11 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoginPage>();
         builder.Services.AddSingleton<LoadingPage>();
         builder.Services.AddSingleton<VibrationPage>();
+		builder.Services.AddSingleton<QrScannerPage>();
+		builder.Services.AddSingleton<QrCodePage>();
 
-		builder.Services.AddTransient<AuthService>();
+		builder.Services.AddTransient<IAuthService,AuthService>();
+		builder.Services.AddSingleton<IEncryptingService,EncryptingService>();
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

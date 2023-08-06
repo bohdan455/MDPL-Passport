@@ -4,9 +4,9 @@ namespace MDPL_Passport.Pages;
 
 public partial class LoadingPage : ContentPage
 {
-    private readonly AuthService _authService;
+    private readonly IAuthService _authService;
 
-    public LoadingPage(AuthService authService)
+    public LoadingPage(IAuthService authService)
 	{
 		InitializeComponent();
         _authService = authService;

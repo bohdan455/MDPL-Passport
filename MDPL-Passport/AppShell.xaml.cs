@@ -12,5 +12,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
         Routing.RegisterRoute(nameof(LoadingPage), typeof(LoadingPage));
         Routing.RegisterRoute(nameof(VibrationPage), typeof(VibrationPage));
+        Routing.RegisterRoute(nameof(QrCodePage), typeof(QrCodePage));
+        Routing.RegisterRoute(nameof(QrScannerPage), typeof(QrScannerPage));
     }
 }
