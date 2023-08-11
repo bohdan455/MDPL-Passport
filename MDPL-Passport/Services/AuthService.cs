@@ -20,7 +20,7 @@ namespace MDPL_Passport.Services
             new User { Name = "Юзеф Волинський", Position = "Журналіст", Login = "yuzev_volynsky", Password = "password7" },
             new User { Name = "Ангел Соняшник Сонячний", Position = "Міністр Охорони Здоров’я МДПЛ", Login = "angel_sonyashnik", Password = "password8" },
             new User { Name = "Тарас Коновалець", Position = "Головнокомандувач ЗС МДПЛ", Login = "taras_konoval", Password = "password9" },
-            new User { Name = "Джугашвілі Макар Сталін", Position = "Дармоїд", Login = "djuga_stalin", Password = "password10" },
+            new User { Name = "Джугашвілі Макар Сталін", Position = "Дармоїд і Куколд", Login = "djuga_stalin", Password = "password10" },
             new User { Name = "Бомбив Віталій", Position = "Командир Національної гвардії МДПЛ", Login = "bombiv_vitaliy", Password = "password11" },
             new User { Name = "Іоанн Цойх", Position = "Колектор", Login = "ioann_tsoikh", Password = "password12" },
             new User { Name = "Максим Марцинкевич", Position = "Адвокат", Login = "max_marcinkevich", Password = "password13" },
@@ -29,7 +29,7 @@ namespace MDPL_Passport.Services
 
         public Task<bool> IsAuthenticated()
         {
-            return Task.FromResult(false);
+            return Task.FromResult(Preferences.Default.Get("IsAuthenticated", false));
         }
 
 
@@ -42,13 +42,24 @@ namespace MDPL_Passport.Services
                 return Task.FromResult(false);
             }
 
-            // Set a string value:
             Preferences.Default.Set("Name", user.Name);
 
-            // Set an numerical value:
             Preferences.Default.Set("Position", user.Position);
 
+            Preferences.Default.Set("IsAuthenticated", true);
+
             return Task.FromResult(true);
+        }
+
+        public Task Logout()
+        {
+            Preferences.Default.Clear("Name");
+
+            Preferences.Default.Clear("Position");
+
+            Preferences.Default.Clear("IsAuthenticated");
+
+            return Task.CompletedTask;
         }
     }
 }

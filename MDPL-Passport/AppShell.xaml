@@ -34,5 +34,9 @@
         Title="Vibration"
         ContentTemplate="{DataTemplate pages:VibrationPage}"
         Route="VibrationPage" />
+        <ShellContent
+        Title="Logout"
+        ContentTemplate="{DataTemplate pages:LogoutPage}"
+        Route="LogoutPage" />
     </TabBar>
 </Shell>
