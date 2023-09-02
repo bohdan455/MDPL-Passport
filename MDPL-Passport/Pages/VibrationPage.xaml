@@ -8,9 +8,19 @@
             Padding="30,0"
             VerticalOptions="Center">
         <Button 
-            Text="Почати вібрувати"
+            Text="Звичайна Вібрація"
             FontSize="20"
-            Clicked="StartVibration" />
-        
+            Clicked="DefaultVibration" />
+
+        <Button 
+            Text="Преміальна Вібрація"
+            FontSize="20"
+            Clicked="PremiumVibration" />
+
+        <Button 
+            Text="Кукольдська вібрація"
+            FontSize="20"
+            Clicked="CockuldVibration" />
+
     </VerticalStackLayout>
 </ContentPage>
